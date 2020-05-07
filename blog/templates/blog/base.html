@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
     <!--end of cdn-->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -29,9 +29,11 @@
           <li id="item" class="nav-item">
             <a class="nav-link active cls" href="#">Home</a>
           </li>
+          {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link cls" href="#">New Posts</a>
+            <a class="nav-link cls" href="{% url 'post_new' %}">New Posts</a>
           </li>
+          {% endif %}
           <li class="nav-item">
             <a class="nav-link cls" href="#">About</a>
           </li>
