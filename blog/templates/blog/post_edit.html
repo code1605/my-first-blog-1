@@ -1,11 +1,29 @@
-{% extends 'blog/base.html' %}
-
+{% extends 'blog/base.html' %} 
+{% block header%}
+<header>
+  <nav class="navbar navbar-dark justify-content-center">
+    <!-- Navbar content -->
+    <ul id="list" class="nav nav-tabs">
+      <li id="item" class="nav-item">
+        <a class="nav-link" href="{%url 'post_list'%}">Home</a>
+      </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'post_new' %}">Edit/Create Posts</a>
+      </li>
+      
+      {% endif %}
+    </ul>
+  </nav>
+</header>
+{% endblock %} 
 {% block content %}
-    <h2>New Post</h2>
-    <form method="POST" class = "post-form">{% csrf_token %}
-        {{ form.as_p}}
-        {% if user.is_authenticated %}
-        <button type="submit" class ="btn btn-success">Save</button>
-        {% endif %}
-    </form>
+<div class="justify-content-center container form-cust">
+  <h2 class="center">New Post</h2>
+  <form method="POST" class="post-form">
+    {% csrf_token %} {{ form.as_p}} {% if user.is_authenticated %}
+    <button type="submit" class="btn btn-success button-save">Save</button>
+    {% endif %}
+  </form>
+</div>
 {% endblock %}

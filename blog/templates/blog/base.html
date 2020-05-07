@@ -17,29 +17,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script:wght@500&display=swap|Abril+Fatface&family=Dancing+Script:wght@500&display=swap">
+  
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <title>Gift W. T</title>
   </head>
 
   <body>
-    <header>
-      <nav class="navbar navbar-dark justify-content-center">
-        <!-- Navbar content -->
-        <ul id="list" class="nav nav-tabs">
-          <li id="item" class="nav-item">
-            <a class="nav-link active cls" href="#">Home</a>
-          </li>
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link cls" href="{% url 'post_new' %}">New Posts</a>
-          </li>
-          {% endif %}
-          <li class="nav-item">
-            <a class="nav-link cls" href="#">About</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+   {% block header%}
+    {% endblock %}
 
     {% block content%}
     {%endblock%}

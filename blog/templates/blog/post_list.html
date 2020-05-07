@@ -1,13 +1,32 @@
 {% extends 'blog/base.html' %}
-
+{% block header%}
+<header>
+    <nav class="navbar navbar-dark justify-content-center">
+      <!-- Navbar content -->
+      <ul id="list" class="nav nav-tabs">
+        <li id="item" class="nav-item">
+          <a class="nav-link  active" href="{%url 'post_list'%}">Home</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'post_new' %}">Edit/Create Posts</a>
+        </li>
+        
+        {% endif %}
+        
+      </ul>
+    </nav>
+  </header>
+{% endblock %}
 {% block content%}
-<div >
+<div class ="list justify-content-center">
     {% for post in posts%}
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <p>published: {{post.published_date}}</p>
-      <h1 class="display-6"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title}}</a> </h1>
-      <p class="lead">
+        <p class = "special">published: {{post.published_date}}</p>
+        <hr class = "top">
+      <h1 class="display-6 tit"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title}}</a> </h1>
+      <p class="lead tit">
         {{ post.text|linebreaksbr}}
       </p>
     </div>

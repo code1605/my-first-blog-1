@@ -1,13 +1,36 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/base.html' %} 
+{% block header%}
+<header>
+  <nav class="navbar navbar-dark justify-content-center">
+    <!-- Navbar content -->
+    <ul id="list" class="nav nav-tabs">
+      <li id="item" class="nav-item">
+        <a class="nav-link  active" href="{% url 'post_list' %}">Home</a>
+      </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'post_new' %}">Edit/Create Posts</a>
+      </li>
+      
+      {% endif %}
+    </ul>
+  </nav>
+</header>
+{% endblock %}
 {% block content %}
-<div>
-    {% if post.published_date %}
-        <div>
-            {{ post.published_date }}
-        </div>
-    {% endif %}
-    <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="fa fa-edit"></span></a>
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.text|linebreaksbr }}</p>
+<div class="container text-body">
+  {% if post.published_date %}
+  <div class="body-post special">
+    {{ post.published_date }}
+    <a
+      class="btn btn-default btn-corner"
+      href="{% url 'post_edit' pk=post.pk %}"
+      ><span class="fa fa-edit"></span
+    ></a>
+  </div>
+  {% endif %}
+
+  <h2 class="tit">{{ post.title }}</h2>
+  <p class="tit">{{ post.text|linebreaksbr }}</p>
 </div>
 {% endblock %}

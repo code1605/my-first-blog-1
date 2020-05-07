@@ -1,0 +1,43 @@
+.list {
+  width: 80%;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10%;
+}
+.special {
+  font-family: "Dancing Script", serif;
+  font-size: 22px;
+  text-align: end;
+}
+.top {
+  width: 100%;
+  border-width: 3px;
+  border-color: rgb(43, 177, 255);
+}
+.tit {
+  font-family: "Abril Fatface", serif;
+}
+.form-cust {
+  width: 80%;
+  margin-left: 30%;
+}
+.button-save {
+  margin-left: 15%;
+  width: 20%;
+}
+.body-post {
+   text-align: end;
+  width: 100%;
+  background-color: rgb(226, 219, 209);
+}
+.btn-corner {
+  position: relative;
+}
+.center{
+    margin-left: 18%;
+}
+.text-body {
+    width: 80%;
+  background-color: rgb(234, 255, 248);
+}
