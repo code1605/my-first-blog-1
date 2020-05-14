@@ -13,10 +13,11 @@
 .top {
   width: 100%;
   border-width: 3px;
-  border-color: rgb(43, 177, 255);
+  border-color: rgb(255, 43, 43);
 }
 .tit {
   font-family: "Abril Fatface", serif;
+  background-color: rgb(210, 224, 250);
 }
 .form-cust {
   width: 80%;
@@ -38,6 +39,12 @@
     margin-left: 18%;
 }
 .text-body {
-    width: 80%;
-  background-color: rgb(234, 255, 248);
+  width: 80%;
+  background-color: rgb(1, 255, 170);
+}
+.jumbotron{
+  width: 90%;
+  border: 2px;
+  border-radius: 20%;
+  background-color: rgb(255, 228, 209);
 }

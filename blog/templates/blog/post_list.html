@@ -8,12 +8,16 @@
           <a class="nav-link  active" href="{%url 'post_list'%}">Home</a>
         </li>
         {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link " href="{% url 'post_new' %}">Edit/Create Posts</a>
-        </li>
-        
-        {% endif %}
-        
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'post_new' %}">Edit/Create Posts</a>
+      </li>
+      <li class="nav-item">
+        <p class="nav-link">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small>
+        </p>
+    </li>
+      {% else %}
+        <a href="{% url 'login' %}" class="nav-link">Login</a>
+      {% endif %}
       </ul>
     </nav>
   </header>
