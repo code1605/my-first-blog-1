@@ -26,7 +26,7 @@
   <body>
    {% block header%}
     {% endblock %}
-    
+     <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
     {% block content%}
     {%endblock%}
     <script
